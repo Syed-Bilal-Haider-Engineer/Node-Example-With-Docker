@@ -1,0 +1,28 @@
+version: "3"
+services: 
+  db:
+    image: postgres
+    environment:
+      POSTGRES_PASSWORD: password123
+      POSTGRES_USER: user123
+      POSTGRES_DB: db123
+  # mysql:
+  #   image: mariadb:10.8.3
+  #   # Uncomment below when on Mac M1
+  #   # platform: linux/arm64/v8
+  #   command: --default-authentication-plugin=mysql_native_password
+  #   restart: always
+  #   environment:
+  #     MYSQL_ROOT_PASSWORD: root
+  #   ports:
+  #     - 3306:3306
+  # adminer:
+  #   image: adminer
+  #   restart: always
+  app:
+    image: docker-node-app
+    ports:
+      - 13000:3000
+
+
+
